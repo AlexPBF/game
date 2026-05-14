@@ -50,23 +50,20 @@ export class Game extends Phaser.Scene {
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null,this);
 
         //botoes movimentacao       
-         const leftBtn = this.add.image(300, 570, 'left')
+         const leftBtn = this.add.image(100, 570, 'left')
         .setInteractive()
         .setScrollFactor(0)
-        .setScale(0.2)   
-        .setAlpha(1);
+        .setScale(0.2);
 
-        const rightBtn = this.add.image(440, 570, 'right')
+        const rightBtn = this.add.image(240, 570, 'right')
             .setInteractive()
             .setScrollFactor(0)    
-            .setScale(0.2)        
-            .setAlpha(1);
+            .setScale(0.2);
 
-        const upBtn = this.add.image(370, 570, 'jump')
+        const upBtn = this.add.image(660, 570, 'jump')
             .setInteractive()
             .setScrollFactor(0)
-            .setScale(0.2)   
-            .setAlpha(1);
+            .setScale(0.3);
 
 
         // LEFT
