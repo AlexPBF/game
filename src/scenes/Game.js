@@ -49,7 +49,61 @@ export class Game extends Phaser.Scene {
         this.physics.add.collider(this.bombs, this.platforms);
         this.physics.add.collider(this.player, this.bombs, this.hitBomb, null,this);
 
+        //botoes movimentacao       
+         const leftBtn = this.add.image(300, 570, 'left')
+        .setInteractive()
+        .setScrollFactor(0)
+        .setScale(0.2)   
+        .setAlpha(1);
 
+        const rightBtn = this.add.image(440, 570, 'right')
+            .setInteractive()
+            .setScrollFactor(0)    
+            .setScale(0.2)        
+            .setAlpha(1);
+
+        const upBtn = this.add.image(370, 570, 'jump')
+            .setInteractive()
+            .setScrollFactor(0)
+            .setScale(0.2)   
+            .setAlpha(1);
+
+
+        // LEFT
+
+        leftBtn.on('pointerdown', () => {
+            leftPressed = true;
+        });
+
+        leftBtn.on('pointerup', () => {
+            leftPressed = false;
+        });
+
+        // RIGHT
+
+        rightBtn.on('pointerdown', () => {
+            rightPressed = true;
+        });
+
+        rightBtn.on('pointerup', () => {
+            rightPressed = false;
+        });
+
+        // UP
+
+        upBtn.on('pointerdown', () => {
+            upPressed = true;
+        });
+
+        upBtn.on('pointerup', () => {
+            upPressed = false;
+        });
+
+        // MULTITOUCH
+
+        this.input.addPointer(3);
+
+              
 
 
     }

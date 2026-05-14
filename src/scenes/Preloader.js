@@ -34,6 +34,10 @@ export class Preloader extends Phaser.Scene {
             'dude.png',
             { frameWidth: 32, frameHeight: 48 }
         );
+        this.load.image('left', 'left.png');
+        this.load.image('right', 'right.png');
+        this.load.image('jump', 'jump.png');
+
     }
 
     create() {
