@@ -72,31 +72,31 @@ export class Game extends Phaser.Scene {
         // LEFT
 
         leftBtn.on('pointerdown', () => {
-            leftPressed = true;
+            this.leftPressed = true;
         });
 
         leftBtn.on('pointerup', () => {
-            leftPressed = false;
+            this.leftPressed = false;
         });
 
         // RIGHT
 
         rightBtn.on('pointerdown', () => {
-            rightPressed = true;
+            this.rightPressed = true;
         });
 
         rightBtn.on('pointerup', () => {
-            rightPressed = false;
+            this.rightPressed = false;
         });
 
         // UP
 
         upBtn.on('pointerdown', () => {
-            upPressed = true;
+            this.upPressed = true;
         });
 
         upBtn.on('pointerup', () => {
-            upPressed = false;
+            this.upPressed = false;
         });
 
         // MULTITOUCH
@@ -109,15 +109,15 @@ export class Game extends Phaser.Scene {
     }
 
     update() {
-        if(this.cursors.left.isDown){
+        if(this.cursors.left.isDown || this.leftPressed){
             this.player.moveLeft();
-        }else if (this.cursors.right.isDown){
+        }else if (this.cursors.right.isDown || this.rightPressed){
             this.player.moveRight();
         }else{
             this.player.idle();
         }
 
-        if(this.cursors.up.isDown){
+        if(this.cursors.up.isDown || this.upPressed){
             this.player.jump();
         }
     }  
